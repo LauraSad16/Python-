@@ -1,0 +1,53 @@
+from art import *
+import time
+nombrejugador=input("¿Cómo te llamas? ")
+print("Hola", nombrejugador, "es hora de jugar")                                 #v= vidas del jugador
+print(" ")                                                                       #f=Fallas
+#Sirve para dejar un espacio en blanco en el programa al ejecutarlo              #p=Palabra definida        
+time.sleep(1)                                                                    #t=Palabra
+print("comienza a adivinar")                                                     #l=Letra
+time.sleep(0.5)
+#Sleep sirve para detener la ejecución de un programa tantos segundos
+p="universidad"
+t=" "
+v=5 
+while v > 0:
+    f=0
+    for i in p:
+        if i in t:
+            print(i,end=" ") #end=" " Sirve para que el codigo se ejecute en la misma linea 
+        else:
+            print("*",end="")
+            f+=1
+    if f==0:
+        input()
+        print("")
+        print("felicidades, ganaste")
+        input()
+        break              #rompe el ciclo de While
+
+    l=input("introduce una letra: ")
+    t+=l
+
+    if l not in p:
+        v-=1
+        print("equivocacion")
+        print("tu tienes ",v," vidas")
+    if v== 0:
+        print("perdiste!")
+        tprint("you died")
+        break
+    if v== 4:
+        tprint("0")
+    if v==3:
+        tprint("0-")
+    if v==2:
+        tprint("0+")    
+    if v==1:
+        tprint("0+<")
+
+else:
+
+    input()
+    print("gracias por participar") #Final del programa
+    input()
